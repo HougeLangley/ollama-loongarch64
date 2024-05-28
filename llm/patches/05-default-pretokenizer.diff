@@ -21,9 +21,9 @@ index 15c66077..af1aede3 100644
              } else if (
                      tokenizer_pre == "llama3"   ||
                      tokenizer_pre == "llama-v3" ||
-@@ -4594,7 +4594,7 @@ static void llm_load_vocab(
-                 tokenizer_pre == "dbrx") {
-                 vocab.type_pre = LLAMA_VOCAB_PRE_TYPE_DBRX;
+@@ -4597,7 +4597,7 @@ static void llm_load_vocab(
+                 tokenizer_pre == "smaug-bpe") {
+                 vocab.type_pre = LLAMA_VOCAB_PRE_TYPE_SMAUG;
              } else {
 -                throw std::runtime_error(format("unknown pre-tokenizer type: '%s'", tokenizer_pre.c_str()));
 +                vocab.type_pre = LLAMA_VOCAB_PRE_TYPE_DEFAULT;
