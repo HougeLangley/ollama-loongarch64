@@ -11,7 +11,7 @@ diff --git a/llama.cpp b/llama.cpp
 index 15c66077..af1aede3 100644
 --- a/llama.cpp
 +++ b/llama.cpp
-@@ -4504,9 +4504,6 @@ static void llm_load_vocab(
+@@ -4545,9 +4545,6 @@ static void llm_load_vocab(
                  LLAMA_LOG_WARN("%s: ************************************        \n", __func__);
                  LLAMA_LOG_WARN("%s:                                             \n", __func__);
                  vocab.type_pre = LLAMA_VOCAB_PRE_TYPE_DEFAULT;
@@ -21,7 +21,7 @@ index 15c66077..af1aede3 100644
              } else if (
                      tokenizer_pre == "llama3"   ||
                      tokenizer_pre == "llama-v3" ||
-@@ -4553,7 +4550,7 @@ static void llm_load_vocab(
+@@ -4594,7 +4594,7 @@ static void llm_load_vocab(
                  tokenizer_pre == "dbrx") {
                  vocab.type_pre = LLAMA_VOCAB_PRE_TYPE_DBRX;
              } else {
