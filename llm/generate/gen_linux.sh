@@ -141,15 +141,15 @@ if [ -z "${OLLAMA_SKIP_CPU_GENERATE}" ]; then
 
         if [ "${ARCH}" == "loongarch64" ]; then
             #
-            # LoongArch chips support LASX LSX extensions.
+            # LoongArch LA464 or new one support LASX LSX extensions.
             #
-            if [ -z "${OLLAMA_CPU_TARGET}" -o "${OLLAMA_CPU_TARGET}" = "cpu_lasx" ]; then
+            if [ -z "${OLLAMA_CPU_TARGET}" -o "${OLLAMA_CPU_TARGET}" = "cpu_lasx_lsx" ]; then
                 #
                 # 2021 Loongson LA464
                 #
                 init_vars
                 CMAKE_DEFS="${COMMON_CPU_DEFS} -DLLAMA_AVX=off -DLLAMA_AVX2=off -DLLAMA_AVX512=off -DLLAMA_LASX=on -DLLAMA_LSX=on -DLLAMA_FMA=off -DLLAMA_F16C=off ${CMAKE_DEFS}"
-                BUILD_DIR="../build/linux/${ARCH}/cpu_lasx"
+                BUILD_DIR="../build/linux/${ARCH}/cpu_lasx_lsx"
                 echo "Building LASX LoongArch"
                 build
                 compress
